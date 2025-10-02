@@ -24,7 +24,7 @@ export const HeroSection=()=>{
         {/* Right Side Image */}
         <div className='mt-12 md:mt-0'>
           <img
-            src='/hero.png' // <-- replace with your world image
+            src={`${import.meta.env.BASE_URL}hero.png`} // <-- replace with your world image
             alt='World Landmarks'
             className='w-full max-w-lg'
           />
