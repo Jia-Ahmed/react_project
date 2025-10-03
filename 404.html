@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
+<head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Single Page App Redirect</title>
-    <script type="text/javascript">
-      // Redirect all 404 requests to index.html
-      var redirect = sessionStorage.redirect;
-      delete sessionStorage.redirect;
-      if (redirect && redirect != location.href) {
-        history.replaceState(null, null, redirect);
-      }
+    <title>Redirecting...</title>
+    <script>
+        const repoName = 'react_project'; // Change this if your repo has a different name
+        const currentPath = window.location.pathname;
+        
+        // Check if we're already in the correct path
+        if (!currentPath.includes(repoName)) {
+            // Redirect to the correct base path
+            window.location.href = `/${repoName}${currentPath}`;
+        } else {
+            // Already in correct path, redirect to index.html
+            window.location.href = `/${repoName}/index.html`;
+        }
     </script>
-  </head>
-  <body>
-    <script type="text/javascript">
-      sessionStorage.redirect = location.href;
-      location.href = "/";
-    </script>
-  </body>
+</head>
+<body>
+    Redirecting... <a href="/react_project/">Click here if not redirected</a>.
+</body>
 </html>
