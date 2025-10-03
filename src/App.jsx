@@ -35,7 +35,9 @@ const router = createBrowserRouter([
       }
     ],
   },
-]);
+], {
+  basename: "/react_project" // 👈 Add basename here as second argument
+});
 
 const App = () => {
   return <RouterProvider router={router} />;
